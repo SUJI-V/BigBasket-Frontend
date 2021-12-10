@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Register</h1>
+                        <h6>Please Enter Registeration Details!!</h6>
+                </div>
+                <form [formGroup]="signUpForm" (ngSubmit)="signUpProcess()">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                            <input type="text" formControlName="name" class="form-control" id="fullName" placeholder="First Name"><br>
+                            <span class="text-danger" *ngIf="signUpForm.controls['name'].dirty && signUpForm.hasError('required','name')">*Name Is Required</span>
+                          </div>
+
+                          <!-- <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">PhoneNumber</label>
+                            <input type="text" formControlName="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" formControlName="address" class="form-control" id="address" placeholder="Address">
+                          </div> -->
+
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                          <span class="text-danger" *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">*Email Is Required</span>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <span class="text-danger" *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">*Password Is Required</span>
+                        </div>
+                        <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-primary">SignUp</button>
+                     
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

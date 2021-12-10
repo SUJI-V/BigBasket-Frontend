@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SubscriptionId</th>
+        <th scope="col">UserId</th>
+        <th scope="col">PlanId</th>   
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sub of subscribers">
+        <td>{{sub.id}}</td>
+        <td>{{sub.userId}}</td>
+        <td>{{sub.planId}}</td>       
+      </tr>
+    </tbody>
+  </table>
