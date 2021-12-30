@@ -19,7 +19,7 @@ export class RetailersService {
 
     this.baseUrl = this.environmentService.environment.AssistAPI_URL;
     
-    const url = `${this.baseUrl}/api/v1/retailer/all`
+    const url = `${this.baseUrl}/api/v1/retailers`
 
     return this.httpClient.get(url);
     

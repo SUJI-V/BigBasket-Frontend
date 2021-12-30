@@ -14,7 +14,7 @@ export class AuthServiceService {
     this.baseUrl = this.environmentService.environment.AssistAPI_URL
    }
 
-   signUp(data: any): Observable<any> //complete
+   signUp(data: any): Observable<any>
    {
      console.log("from signUpProcess"+ data);
      
@@ -28,8 +28,6 @@ export class AuthServiceService {
 
   login(data: any): Observable<any>
   {
-    console.log("from login process auth-service "+ data);
-    
     this.baseUrl = this.environmentService.environment.AssistAPI_URL;
     
     const url = `${this.baseUrl}/api/v1/tokens/user`
@@ -37,23 +35,25 @@ export class AuthServiceService {
     return this.http.post(url,data,{responseType:'text'});
   }
 
-  loggedUserId():  Observable<any>
+  public getUserProfile(): Observable<any>
   {
     this.baseUrl = this.environmentService.environment.AssistAPI_URL;
-    const url = `${this.baseUrl}/api/v1/users/loggeduserid`;
-    return this.http.get<any>(url);
+    const url = `${this.baseUrl}/api/v1/users/current`
+    return this.http.get(url);
   }
 
-  loggedIn(){
-    //return !!localStorage.getItems('token')
+  loggedIn(): boolean{
     return !!document.cookie;
   }
   
-  logoutUser(){
-    document.cookie;
-    console.log(document.cookie);
+  logoutUser(): void{
+    this.delete_cookie('token');
+    this.delete_cookie('userId');
+    alert("Logged Out");
     this._router.navigate(['/login-user']);
   }
- 
+  delete_cookie(name:any): void {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
   
 }

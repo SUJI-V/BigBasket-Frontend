@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr class="header">
+        <th class="headers" scope="col">Retailer</th>
+        <th class="headers" scope="col">Email</th>
+        <th class="headers" scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let retail of retailers">
+        <td class="rows">{{retail.username}}</td>
+        <td class="rows">{{retail.email}}</td>
+        <td class="rows"><button class="btn btn-primary"  (click)="router.navigate(['/plans']);">View Plans</button></td>
+       
+      </tr>
+    </tbody>
+  </table>
+  <br><br>

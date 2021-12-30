@@ -13,7 +13,8 @@ export class UserLoginComponent implements OnInit {
   helper = new JwtHelperService();
   decodedToken: any;
   formGroup: FormGroup | any;
-  userid: any;
+  // public CurrentUserDetails: any;
+
   constructor(
     private authService: AuthServiceService,
     private _router: Router
@@ -30,21 +31,17 @@ export class UserLoginComponent implements OnInit {
   }
   loginProcess() {
     if (this.formGroup?.valid) {
-      this.authService.login(this.formGroup.value).subscribe((result) => {
-        if (result != null) {
-          console.log(result);
+      this.authService.login(this.formGroup.value).subscribe((result) =>
+        {
+        if (result != null) 
+        {
           document.cookie = `token=${result}`;
-
-          this._router.navigate(['/user-subscription']);
+          alert('Login Successfull');
+          this._router.navigate(['/user-homePage']);
         } else {
           alert('Invalid username or password');
         }
       });
     }
-  }
-  private getLoggedUserId(){
-    this.authService.loggedUserId().subscribe(result=>{
-      return this.userid=result;
-    })
   }
 }

@@ -1,0 +1,19 @@
+<br>
+<div class="card m-5" style="width: 18rem;" *ngIf="userDetails">
+<ul class="list-group">
+    <li class="list-group-item"><strong>User Id : </strong>{{userDetails.id}}</li>
+    <li class="list-group-item"><strong>UserName : </strong>{{userDetails.name}}</li>
+    <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
+    <li *ngFor="let sub of subscribers" class="list-group-item"><strong>PlanId : </strong>{{sub.planId}}</li>
+    <li class="list-group-item" *ngIf="!userDetails"><strong>Test Data : </strong>User Detail Unavailable</li>
+</ul>
+</div>
+
+
+<!-- <div class="card m-5" style="width: 18rem;" *ngIf="subscribers">
+<ul class="list-group">
+    
+   <li *ngFor="let sub of subscribers" class="list-group-item"><strong>PlanId : </strong>{{sub.planId}}</li> 
+    <li class="list-group-item"><strong>Test Data : </strong>Unavailable</li>
+</ul>
+</div> -->

@@ -23,6 +23,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { PlansComponent } from './components/plans/plans.component';
 import { AuthGuard } from './services/RouteGuard/auth.guard';
 import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
+import { PublicPageComponent } from './components/public-page/public-page.component';
 
 const providers = [
   AppConfigService,
@@ -39,6 +41,8 @@ const providers = [
     UsersComponent,
     PlansComponent,
     SubscriptionsComponent,
+    UserHomeComponent,
+    PublicPageComponent,
   ],
   imports: [
     BrowserModule,

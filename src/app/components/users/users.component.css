@@ -1,0 +1,15 @@
+
+.header{
+    background-color: rgba(0, 0, 0);
+}
+.headers{
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+}
+.rows{
+    background-color: rgba(252, 252, 252, 0.5);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: medium;
+}

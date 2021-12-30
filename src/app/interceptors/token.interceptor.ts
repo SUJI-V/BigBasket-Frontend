@@ -17,8 +17,7 @@ export class TokenInterceptor implements HttpInterceptor{
                 request= this.addAPIKeyToRequest(request,secret);
             }
         }
-     //const secret = document.cookie;
-     //   request = this.addAPIKeyToRequest(request,secret);
+
         return next.handle(request);
     }
     private addAPIKeyToRequest(request:HttpRequest<any>,secret:string){

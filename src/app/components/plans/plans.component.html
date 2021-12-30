@@ -1,2 +1,19 @@
-<h1><p>Fetch Plan API's Here</p>
-</h1>
+<table class="table">
+    <thead>
+      <tr class="header">
+        <th class="headers" scope="col">Plan Name</th>
+        <th class="headers" scope="col">Amount</th>
+        <th class="headers" scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plan of plans">
+        <td class="rows">{{plan.name }}</td>
+        <td class="rows">{{plan.amount }}</td>
+        <td class="rows">{{plan.details }}</td>
+       
+       
+      </tr>
+    </tbody>
+  </table>
+  <br><br>

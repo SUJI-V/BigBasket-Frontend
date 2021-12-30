@@ -8,16 +8,13 @@ import { SubscriptionsService } from 'src/app/services/subscriptions.service';
 })
 export class SubscriptionsComponent implements OnInit {
 
-  public subscribers: any;
+ 
+  
   constructor(public _subscriptionService: SubscriptionsService) { }
 
   ngOnInit(): void {
-    this.getSubscriptions();
   }
-  private getSubscriptions():void{
-    this._subscriptionService.getSubscriptions().subscribe(result=>{
-      this.subscribers=result;
-    })
-  }
+
+  
 
 }
